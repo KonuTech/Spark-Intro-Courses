@@ -8,9 +8,9 @@ schema = StructType([ \
                      StructField("id", IntegerType(), True), \
                      StructField("name", StringType(), True)])
 
-names = spark.read.schema(schema).option("sep", " ").csv("file:///SparkCourse/Marvel+Names")
+names = spark.read.schema(schema).option("sep", " ").csv("file:///SparkCourse/Marvel-names.txt")
 
-lines = spark.read.text("file:///SparkCourse/Marvel+Graph")
+lines = spark.read.text("file:///SparkCourse/Marvel-graph.txt")
 
 # Small tweak vs. what's shown in the video: we trim each line of whitespace as that could
 # throw off the counts.
